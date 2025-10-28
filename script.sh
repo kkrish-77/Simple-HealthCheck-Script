@@ -13,3 +13,19 @@ echo "Disk Usage: $DISK"
 CPU_LIMIT=80
 MEM_LIMIT=80
 DISK_LIMIT=80
+
+CPU_VAL=${CPU%%%*}
+MEM_VAL=${MEM%%%*}
+DISK_VAL=${DISK%%%*}
+
+if (( ${CPU_VAL%.*} > CPU_LIMIT )); then
+  echo "ALERT!!! High CPU usage!"
+fi
+
+if (( ${MEM_VAL%.*} > MEM_LIMIT )); then
+  echo " ALERT!!! High Memory usage!"
+fi
+
+if (( DISK_VAL > DISK_LIMIT )); then
+  echo " ALERT!!! Low Disk Space!"
+fi
