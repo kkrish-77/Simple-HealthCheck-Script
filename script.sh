@@ -9,3 +9,7 @@ DISK=$(df -h / | awk 'NR==2 {print $5}')
 echo "CPU Usage: $CPU"
 echo "Memory Usage: $MEM"
 echo "Disk Usage: $DISK"
+
+CPU_LIMIT=80
+MEM_LIMIT=80
+DISK_LIMIT=80
